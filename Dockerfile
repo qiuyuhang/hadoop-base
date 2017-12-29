@@ -4,8 +4,6 @@ MAINTAINER qiuyuhang <imqyh@qq.com>
 
 WORKDIR /root
 
-COPY sources.list /etc/apt/
-
 # install openssh-server, openjdk and wget
 
 RUN apt update && apt install -y openssh-server openjdk-8-jdk wget nano --fix-missing

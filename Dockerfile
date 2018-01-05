@@ -20,6 +20,12 @@ RUN wget http://apache.org/dist/hive/hive-2.3.2/apache-hive-2.3.2-bin.tar.gz && 
     mv apache-hive-2.3.2-bin /opt/hive && \
     rm apache-hive-2.3.2-bin.tar.gz
 
+# install hive-mysql driver
+RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.45.tar.gz && \
+    tar -xzvf mysql-connector-java-5.1.45.tar.gz && \
+     mv mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar /opt/hive/lib/ && \
+    rm -rf mysql-connector-java-5.1.45*
+    
 # install zookeeper 3.4.11
 RUN wget http://apache.org/dist/zookeeper/zookeeper-3.4.11/zookeeper-3.4.11.tar.gz && \
     tar -xzvf zookeeper-3.4.11.tar.gz && \
